@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page: #eaf0f4;
+  --color-ink: #202c36;
+  --color-muted: #5f6f7c;
+  --color-line: #ced9e1;
+  --color-terminal: #1c2229;
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply m-0 bg-page font-sans text-ink antialiased;
+  }
+
+  section[id] {
+    scroll-margin-top: 2rem;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #627d93;
+    outline-offset: 5px;
+  }
+
+  ::selection {
+    background: #c8d9e6;
+    color: #202c36;
+  }
+}
+
+@layer components {
+  .section-space {
+    @apply py-16 sm:py-24;
+  }
+
+  .section-heading {
+    @apply text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl;
+  }
+}
